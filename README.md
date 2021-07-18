@@ -34,3 +34,47 @@ Clone this repo in your local and make a new branch with your name, update the r
 ###### You can always reach out to Sairam Bade or Kuldeep on slack in case of any doubt. Good Luck!
 ---------------------------------------------
 #Your readme goes here :)
+
+## Running the code
+```
+# create a virtual environment 
+python3 -m venv virtualenv 
+
+# activate the virtual environment
+source virtualenv/bin/activate
+
+# install all packages required 
+pip install -r requirement.txt
+# pip freeze > requirement.txt
+
+# add your mongo uri 
+MONGO_URI=YOUR_URI > .env
+
+#run the app 
+flask run 
+```
+
+## Database 
+created 3 collections , projects , models and datasets. Was aiming to try purely embedded or relational type of structure, ended up doing something in between. If time permits will try the above two.
+
+## Endpoints  
+
+- /preprocess/project_id 
+> loads the project and related info into mongoDB 
+
+- /models/model_id 
+> returns the model if it exists
+
+- /dataset/dataset_id
+> returns the dataset if exists
+
+- /project/project_id 
+> returns the project if exists 
+
+- /trained_models/dataset_id
+> returns models trained on that dataset 
+
+## to do - 
+- add reqirements.txt pip freeze > requirement.txt
+- add a by reference flag in /preprocess for references
+- trying to change the doc style to have references to avoid data redundancy 
